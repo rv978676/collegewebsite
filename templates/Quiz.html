@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Quiz</title>
+  <style>
+    .center{
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+      padding-left: 570px;
+    }
+    .button{
+      background-color: #000000;
+      color: rgb(255, 255, 255);
+      border: none;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px 7px;
+      padding: 15px 32px;
+    }
+    h2{
+      border: 1px solid black;
+      border-radius: 5px;
+      text-align: center;
+      display: inline;
+      margin-left:500px;
+      padding: 10px;
+    
+      
+    }
+    
+  </style>
+</head>
+<body>
+  <h2>{{name}}({{id}})</h2>
+<div class="center">
+<form action='{% url "Exam" id=id %}' method="POST">{% csrf_token %}
+{% for each in question %}
+    <h3>{{loop.counter}}.{{each.question}}</h3>
+    
+    <div>
+        <input type="radio" name="{{each.question}}" id="{{each.option4}}" value="{{each.option1}}" 
+        <label for="{{each.option1}}">A) {{each.option1}} </label>/>
+    </div>
+    
+    <div>
+        <input type="radio" name="{{each.question}}" id="{{each.option4}}" value="{{each.option2}}" />
+        <label for="{{each.option2}}">B) {{each.option2}}</label>
+    </div>
+    
+    <div>
+        <input type="radio" name="{{each.question}}" id="{{each.option4}}" value="{{each.option3}}" />
+        <label for="{{each.option3}}">C) {{each.option3}}</label>
+    </div>
+    
+    <div>
+        <input type="radio" name="{{each.question}}" id="{{each.option4}}" value="{{each.option4}}" />
+        <label for="{{each.option4}}">D) {{each.option4}}</label>
+    </div>
+  {% endfor %}
+
+
+<button type="submit" class="button">Submit</button>
+
+</div>
+</body>
+</html>

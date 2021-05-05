@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: rgb(66, 66, 66);
+      color: white;
+    }
+    .button{
+      background-color: #ffffff;
+      color: rgb(0, 0, 0);
+      border: none;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px 7px;
+      padding: 15px 32px;
+    }
+  </style>
+</head>
+<body>
+  <form action="exam/{{id}}" method="POST">{% csrf_token %}
+  
+  {% for ques in exam_ques %}
+ <h3>1. {{ques.question}}</h3>
+    
+    <div>
+        <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+        <label for="question-1-answers-A">A){{ques.option1}}</label>
+    </div>
+    
+    <div>
+        <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
+        <label for="question-1-answers-B">B){{ques.option2}}</label>
+    </div>
+    
+    <div>
+        <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
+        <label for="question-1-answers-C">C){{ques.option3}}</label>
+    </div>
+    
+    <div>
+        <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
+        <label for="question-1-answers-D">D){{ques.option4}}</label>
+    </div>
+  </li>
+  {% endfor %}
+  <button type="submit" class="button">Submit</button>
+  </form>
+ 
+  {% comment %} <li>
+
+    <h3>1.CSS Stands for...</h3>
+    
+    <div>
+        <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+        <label for="question-1-answers-A">A) Computer Styled Sections </label>
+    </div>
+    
+    <div>
+        <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
+        <label for="question-1-answers-B">B) Cascading Style Sheets</label>
+    </div>
+    
+    <div>
+        <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
+        <label for="question-1-answers-C">C) Crazy Solid Shapes</label>
+    </div>
+    
+    <div>
+        <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
+        <label for="question-1-answers-D">D) None of the above</label>
+    </div>
+  </li>
+
+<li>
+  <h3>2.Internet Explorer 6 was released in...
+  </h3>
+  <div>
+    <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+    <label for="question-1-answers-A">A) 2001 </label>
+</div>
+
+<div>
+    <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
+    <label for="question-1-answers-B">B) 1998</label>
+</div>
+
+<div>
+    <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
+    <label for="question-1-answers-C">C) 2006
+    </label>
+</div>
+
+<div>
+    <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
+    <label for="question-1-answers-D">D) 2003</label>
+</div>
+
+</li>
+
+<li>
+  <h3>3.SEO Stand for...
+  </h3>
+  <div>
+    <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+    <label for="question-1-answers-A">A) Secret Enterprise Organizations </label>
+</div>
+
+<div>
+    <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
+    <label for="question-1-answers-B">B) Special Endowment Opportunity</label>
+</div>
+
+<div>
+    <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
+    <label for="question-1-answers-C">C) Search Engine Optimization
+    </label>
+</div>
+
+<div>
+    <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
+    <label for="question-1-answers-D">D) Seals End Olives</label>
+</div>
+
+</li>
+
+<li>
+  <h3>4.A 404 Error...
+  </h3>
+  <div>
+    <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+    <label for="question-1-answers-A">A) is an HTTP Status Code meaning Page Not Found</label>
+</div>
+
+<div>
+    <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
+    <label for="question-1-answers-B">B) is a good excuse for a clever design</label>
+</div>
+
+<div>
+    <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
+    <label for="question-1-answers-C">C) should be monitored for in web analytics
+    </label>
+</div>
+
+<div>
+    <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
+    <label for="question-1-answers-D">D) All of the above</label>
+</div>
+</li>
+
+<li>
+  <h3>5.The CSS property used to control the element's font-size is -
+  </h3>
+  <div>
+    <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+    <label for="question-1-answers-A">A)text-style
+
+    </label>
+</div>
+
+<div>
+    <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
+    <label for="question-1-answers-B">B) text-size</label>
+</div>
+
+<div>
+    <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
+    <label for="question-1-answers-C">C) font-size
+    </label>
+</div>
+
+<div>
+    <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
+    <label for="question-1-answers-D">D) None of the above</label>
+</div>
+</li> {% endcomment %}
+
+</body>
+</html>

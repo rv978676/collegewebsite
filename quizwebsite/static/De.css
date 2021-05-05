@@ -1,0 +1,27 @@
+body {background-color: #ffffff;
+      color: #000000;
+}
+
+.w3-container{
+   display:unset;
+   
+}
+.header {
+  padding: 15px;
+  text-align: center;
+  background: #c9e7ff;
+  color: rgb(0, 0, 0);
+}
+
+
+.rightcolumn {
+  float: left;
+  width: 100%;
+  padding-left: 30px;
+  padding-top: 20px;
+  border-top: 1px solid black;
+  
+}
+.padding{
+  padding-left: 5px;
+}

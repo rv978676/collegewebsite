@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <title>Subject name</title>
+  <style>
+    body{
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+.name{
+  padding: 10px;
+  font-size: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border: 2px solid black;
+  color: black;
+  text-align: center;
+  margin: 20px;
+}
+.chapter{
+  font-size: 15pt;
+  color: black;
+  border: 2px solid black;
+  margin: 20px;
+  padding-left: 20px;
+  padding: 25px;
+}
+  </style>
+</head>
+<body>
+  <div class="name">
+  <h2>{{subject.name}}({{subject.code}})</h2>
+  <p>
+    Professor Name: {{subject.teaching_faculty}}
+  </p>
+  </div>
+  <div class="chapter">
+  <p>error showing chapter names</p>
+  {% comment %} {{subject.chapter}}
+  {% for each in subject.chapter %}
+      <p>{{each}}</p>
+  {% endfor %}</div> {% endcomment %}
+</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <title>About page</title>
+  <style>
+body{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border:2px solid black;
+  margin: 100px;
+  margin-left: 250px;
+  margin-right: 250px;
+  text-align: left;
+}
+h3{
+  margin:30px;
+}
+.name{
+  margin: 40px;
+
+}
+.button{
+  margin-left: 70px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 2px solid #000000;
+  padding: 4px;
+}
+.button:hover {
+  background-color: #424242;
+  color: white;
+}
+.comment{
+  width: 100%;
+  padding: 12px;
+ 
+  box-sizing: border-box;
+  margin: 30px;
+  
+  resize: vertical;
+}
+
+  </style>
+</head>
+<body>
+<form action='{% url "query" %}' method="POST">{% csrf_token %}
+  <h3>Give your feedback</h3>
+  <div class="name">
+  <label for="name"><b>Name:</b></label>
+    <input type="text" placeholder="Enter Name" name="Name" id="Name" required>
+</div>
+<div class="name">
+    <label for="email"><b>Email:</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+</div>
+<div class="comment">
+    <label for="comment">Comment:</label>
+    <br>
+    <textarea id="comment" name="comment" placeholder="Write something.." style="height:100px"></textarea>
+</div>
+<div class="submit">
+  <button type="submit" class="button">submit</button>
+    </div>
+  </form>
+</body>
+</html>
